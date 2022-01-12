@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Licorice&family=Ubuntu+Mono&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('SNK\ tree.jpg');
+    background-position: center;
+    background-size: cover;
+}
+img{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.mot-juste h1{
+    font-family: 'Ubuntu Mono', monospace;
+    color: #2DAD49;
+    text-align: center;
+    padding: 6px;
+    margin:auto;
+    font-weight: lighter;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    animation: typing 3.5s steps(29) ;
+}
+
+@keyframes typing{
+    from {width:0}
+    to{width: 100%;}
+}
+
+.mot-juste h1::after{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 1px;
+    background-color: #2DAD49;
+    right: 0;
+    top: 0;
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+    from {opacity: 0}
+    to   {opacity: 100%;}
+}
+h3{
+    /*font-family: 'Luxurious Roman', cursive;*/
+    font-family: 'Licorice', cursive;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    font-size: 30px;
+}
+
+.mot-juste{
+     padding-top: 120px;
+}
+
+
+.triangle{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 0px;
+    width: 0px;
+    border-left: 20px solid #27b846;
+    border-right: 20px solid #00350b;
+    border-top: 20px solid #68da1c;
+    margin:20px;
+    border-bottom: 20px solid #2e752e;
+    animation: turn 4s infinite;
+    cursor: progress;
+}
+
+@keyframes turn{
+    0%{
+        transform: rotate(0);
+    }
+
+    50%{
+        transform: rotate(180deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width:800px){
+    .mot-juste h1{
+        font-size: 20px;
+    }
+
+    .mot-juste h3{
+        font-size: 25px;
+    }
+}
